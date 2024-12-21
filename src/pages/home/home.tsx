@@ -1,5 +1,10 @@
 import React from 'react';
+import { Form } from './form';
 
 export const Home = () => {
-  return <div>home</div>;
+  return (
+    <div className="container mx-auto">
+      <Form />
+    </div>
+  );
 };

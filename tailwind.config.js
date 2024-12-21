@@ -12,6 +12,8 @@ export default {
       },
       colors: {
         darkRed: '#872020',
+        naturalGray: '#898786',
+        alto: '#D9D9D9',
       },
     },
   },
