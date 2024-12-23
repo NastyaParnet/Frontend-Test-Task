@@ -34,6 +34,7 @@ export const Input = (props: Props) => {
 
       <textarea
         {...otherProps}
+        data-testid={name}
         name={name}
         value={value}
         onChange={handleChange}

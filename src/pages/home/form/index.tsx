@@ -51,7 +51,7 @@ export const Form = ({ setUrlFile }: FormProps) => {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmitForm}>
+      <form role="form" onSubmit={handleSubmitForm}>
         <Input name="text" label="Text for file" placeholder="Enter text" />
         <div className="mt-2 grid grid-cols-2 gap-4">
           <Button type="submit">Convert to PDF</Button>
