@@ -12,7 +12,7 @@ export type Props = Omit<BaseButtonProps, 'className'> & {
   fullWidth?: boolean;
 };
 
-export function Button(props: Props) {
+export const Button = (props: Props) => {
   const {
     variant = 'contained',
     children,
@@ -34,7 +34,7 @@ export function Button(props: Props) {
   const buttonClassNames = [
     getVariantClassNames(variant),
     fullWidth ? 'w-full' : '',
-    'px-5 rounded-[6.25rem] font-normal uppercase border border-solid flex items-center justify-center flex-nowrap',
+    'py-1 rounded-[6.25rem] font-normal uppercase border border-solid flex items-center justify-center flex-nowrap',
   ].join(' ');
 
   return (
@@ -42,4 +42,4 @@ export function Button(props: Props) {
       {children}
     </button>
   );
-}
+};
