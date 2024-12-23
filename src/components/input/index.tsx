@@ -37,7 +37,7 @@ export const Input = (props: Props) => {
         name={name}
         value={value}
         onChange={handleChange}
-        className="px-3 py-[7px] w-full text-base font-normal text-ellipsis placeholder:text-base placeholder:font-normal "
+        className="px-3 py-[7px] w-full bg-alto rounded-lg text-base font-normal text-ellipsis placeholder:text-base placeholder:font-normal "
       />
 
       {typeof errors.text?.message === 'string' && (

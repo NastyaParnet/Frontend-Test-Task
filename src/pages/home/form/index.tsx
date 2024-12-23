@@ -4,8 +4,13 @@ import * as Yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Input } from 'components/input';
 import { Button } from 'components/button';
+import { getFile } from 'api/getFile';
 
-export const Form = () => {
+interface FormProps {
+  setUrlFile: (url: string) => void;
+}
+
+export const Form = ({ setUrlFile }: FormProps) => {
   const validationSchema = Yup.object().shape({
     text: Yup.string().required('Field is required'),
   });
@@ -21,8 +26,13 @@ export const Form = () => {
 
   const { handleSubmit } = methods;
 
-  const handleSubmitForm = handleSubmit((data) => {
-    console.log(data);
+  const handleSubmitForm = handleSubmit(async (data) => {
+    try {
+      const url = await getFile(data.text);
+      setUrlFile(url);
+    } catch (error) {
+      console.error('Error fetching file:', error);
+    }
   });
 
   return (
