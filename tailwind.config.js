@@ -8,6 +8,7 @@ export default {
       },
       fontSize: {
         h1: ['32px', '40px'],
+        h2: ['24px', '32px'],
         link: ['16px', '24px'],
       },
       colors: {
