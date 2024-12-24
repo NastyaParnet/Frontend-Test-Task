@@ -1,5 +1,5 @@
 import { Button } from 'components/button';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 interface ListFilesProps {
   activeFile: string;
@@ -7,7 +7,12 @@ interface ListFilesProps {
 }
 
 export const ListFiles = ({ activeFile, setActiveFile }: ListFilesProps) => {
-  const files: string[] = JSON.parse(localStorage.getItem('files') || '[]');
+  const [files, setFiles] = useState<string[]>([]);
+
+  useEffect(() => {
+    const filesFromLocalStorage = JSON.parse(localStorage.getItem('files') || '[]');
+    setFiles(filesFromLocalStorage);
+  }, []);
 
   return (
     <div className="flex flex-col gap-2 overflow-auto">
