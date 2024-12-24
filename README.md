@@ -1,33 +1,26 @@
-# Frontend Test Task
-### Тестове завдання на позицію Front-End розробника в Universe Group
+# Documentation
 
-Твоє завдання - створити простий React додаток, який дозволяє користувачам конвертувати введений текст у PDF документ.
+**Api:**
+Backend requests are located here (getFile).
 
-### Вимоги
+**Components:**
+Components that can be reused (button, error message, input, pdf-reader).
 
-**Інтерфейс:** Інтерфейс користувача повинен містити текстове поле для введення тексту, кнопку "Конвертувати в PDF" та область для відображення результату - PDF файлу.
+**Pages:**
+This is where the output pages are located.
 
-**Конвертація:** При натисканні на кнопку "Конвертувати в PDF", введений користувачем текст повинен бути конвертований у формат PDF. Для цього використовуйте HTTP API (нижче наведено приклад запиту).
+- error - a page that renders with an incorrect url.
+- history - allows you to view the history of previous conversions
+- home - the main page with a form for entering text and a button for converting text to a pdf file.
 
-**Відображення результату:** Після завершення конвертації, PDF файл повинен відобразитися у pdf переглядачі (Можеш використати будь-яку бібліотеку, наприклад [цю](https://github.com/ansu5555/pdf-viewer-reactjs)).
+**Router:**
+Сontrols the correct rendering of the application in relation to the path
 
-**Збереження результатів** Необхідно також реалізувати функціонал для збереження та відображення історії конвертацій (Список файлів, при кліку відображаємо зконвертований документ). Для збереження історії використай локальні браузерні сховища.  
+**Tests:**
+Сheck the basic functionality of the application
 
-**Тести**: Опишіть базовий unit-тест, який покриває функціонал конвертації (Jest або React Testing Library).
+### Commands
 
-**Документація**: Додайте коротку документацію, з описом стуктури та овновних модулів проекту.
+**npm start** - run project
 
-### Додаткові вказівки
-1. В якості бібліотеки UI компонентів використай - [Tailwind CSS](https://tailwindcss.com/)  
-2. Для ковертації використовуйте API запит:
-```
-POST http://95.217.134.12:4010/create-pdf?apiKey={YOUR_API_KEY}
-Body: {
-    "text": "Universe"
-}
-
-API_KEY = 78684310-850d-427a-8432-4a6487f6dbc4
-```
-
-
-Після завершення завдання, надішли посилання на репозиторій з вихідним кодом та відео з демонстрацію додатку.
+**npm test** - run tests
